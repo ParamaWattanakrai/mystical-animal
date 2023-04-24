@@ -25,6 +25,10 @@
             font-family: var(--ff-body)
         }
 
+        .text-center {
+            text-align: center;
+        }
+
         /* General Styling */
 
         body {
@@ -33,39 +37,83 @@
             color: var(--clr-light);
         }
 
+        .container {
+            --max-width: 1440px;
+            --padding: 1rem;
+
+            width: min(var(--max-width), 100% - var(--padding) * 2);
+            margin-inline: auto;
+        }
+        .toggleable-block > .section-title:hover {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <h1 class="ff-display">WELTKRAKE</h1>
-    <h2 class="ff-display">Lore</h2>
-        <p class="ff-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ullam, culpa molestiae, assumenda voluptatem voluptatum quo vero explicabo odio nemo, esse sunt tenetur eaque exercitationem sed aspernatur a ducimus veniam.</p>
-    <h2 class="ff-display">Appearance</h2>
-        <p>In modern days Weltkrake appears as an octopus of such colossal size that its tentacles wraps around the entire planet. Its massive body, dwarfs even the largest of whales, and its tentacles, not limited to eight, are each longer than any coastline on Earth, tighting gripping the entire Earth.</p>
-        <p>But it could only be seen by few people determined to search for it. Other than them, it's invisible to the naked eyes.</p>
-    <h2 class="ff-display">Sightings Internationally</h2>
-        <h3 class="ff-display">United Kingdom | Golden Lion</h3>
+    <header>
+        <div class="container">
+            <h1 class="ff-display text-center">WELTKRAKE</h1>
+        </div>
+    </header>
+    <main>
         <section>
-            <h4>16th Century</h4>
-            <p>The first recorded sighting of Weltkrake was witnessed by thousands at Port of London, somewhen in the later part of 16th century. With hundreds of thousands of tortoises, one by one, crawled up the English shore. The merchants were terrified of its sudden appearance, but were later in ecstacy when they found Indian spice delicately stored in the tortoises shells after killing some of them. Within a few days the tortoise horde was all but dead, leaving behind wealth for the merchants overnight.</p>
-            <p>This event caused people from all over Europe to come by Port of London way more often, in hopes of being present of another miracle, many worshipped tortoise for the fortunes they got. The number of believers grew to a significant size, scaring the Catholic church of the time, prompting them to ban tortoise worshipping, claiming its a trial by God to see human greed.</p>
-            <q>Our lord gave us a chance to prove ourselves for salvation. Yet we killed all of the tortoises over a handful of fortune. Divine is inevitable!</q>
-            <p>A preacher quote according to John Fawke, in his most descriptive record of the event</p>
-            <p>Some claimed that the divine punishment upon England was the English civil war in the next century</p>
-            <p>Later the Protestants adopted an opposing stance of the Catholics by claiming the turtoises were divine gifts from God</p>
-            <h4>1860</h4>
-            <p>On 25 October 1860, Weltkrake appeared in the form a great lion right in front of Buckingham Palace, capable of intelligent conversation and turning opium into gold. It gave much fortune to merchants and the royal family itself</p>
-            <p>After this appearance, the Weltkrake, in the form of the "Golden Lion" became officially respected by the royal family</p>
-            <h4>1960</h4>
-            <p>On 14 February 1960, the Golden Lion materialized once again at Buckingham Palace, but it now has the front half of a lion, and the back half of an octopus, with its eight tentacles. And the once great and respected creature was now lying weak and fatally injured for the pedestrians of England to see. It vanished after hours of agnonizing torment.</p>
-            <p>This event is still disputed with one side claiming that there was no photographic evidence, and that it was an attempt to disrespect the Golden Lion. But the other side was skeptical and claimed the British government covered it up to protect the creature's reputation and divine appearence</p>
+            <div class="container">
+            <h2 class="ff-display">Lore</h2>
+            <p class="ff-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ullam, culpa molestiae, assumenda voluptatem voluptatum quo vero explicabo odio nemo, esse sunt tenetur eaque exercitationem sed aspernatur a ducimus veniam.</p>
+            </div>
         </section>
-        <h3 class="ff-display">Thailand | Evil Avian (วิหกสามานย์)</h3>
         <section>
-            <h4>1893</h4>
-            <p>On 13 July 1893, the Weltkrake appeared in the form of a giant gallic rooster terrorizing the residents of Bangkok, going on a rampage of trampling shops, and even going to the countryside to peck a wild white elephant to death.</p>
-            <p>Amidst the chaos when it reached Petchabun, a local named Boonsohng tried to offer it his small amount of jewelries. The beast calmed down and carefully inspected the jewelries before saying its first intelligible word, "More". Soon, the aristocrats all over the country was forced to pay tribute a massive stash of gold before the rooster said "Enough". Afterwhich the rooster walked eastward, crossing the Mekong river, before mysteriously disappearing.</p>
-            <h4>1954</h4>
-            <p>In September 1954, a large bald eagle flew over Thailand, its wing spanned from Kanchanaburi to Chantaburi. The gloom of its silhouette would be there for a month before disappearing, messing up the climate and farmlands of the people.</p>
+            <div class="container">
+                <h2 class="ff-display">Appearance</h2>
+                <p>In modern days Weltkrake appears as an octopus of such colossal size that its tentacles wraps around the entire planet. Its massive body, dwarfs even the largest of whales, and its tentacles, not limited to eight, are each longer than any coastline on Earth, tighting gripping the entire Earth.</p>
+                <p>But it could only be seen by few people determined to search for it. Other than them, it's invisible to the naked eyes.</p>
+            </div>
         </section>
+        <section>
+            <div class="container">
+                <h2 class="ff-display">Sightings Internationally</h2>
+                <div class="toggleable-block">
+                    <h3 class="section-title ff-display">United Kingdom | Golden Lion</h3>
+                    <section class="section-content">
+                        <h4>16th Century</h4>
+                        <p>The first recorded sighting of Weltkrake was witnessed by thousands at Port of London, somewhen in the later part of 16th century. With hundreds of thousands of tortoises, one by one, crawled up the English shore. The merchants were terrified of its sudden appearance, but were later in ecstacy when they found Indian spice delicately stored in the tortoises shells after killing some of them. Within a few days the tortoise horde was all but dead, leaving behind wealth for the merchants overnight.</p>
+                        <p>This event caused people from all over Europe to come by Port of London way more often, in hopes of being present of another miracle, many worshipped tortoise for the fortunes they got. The number of believers grew to a significant size, scaring the Catholic church of the time, prompting them to ban tortoise worshipping, claiming its a trial by God to see human greed.</p>
+                        <q>Our lord gave us a chance to prove ourselves for salvation. Yet we killed all of the tortoises over a handful of fortune. Divine is inevitable!</q>
+                        <p>A preacher quote according to John Fawke, in his most descriptive record of the event</p>
+                        <p>Some claimed that the divine punishment upon England was the English civil war in the next century</p>
+                        <p>Later the Protestants adopted an opposing stance of the Catholics by claiming the turtoises were divine gifts from God</p>
+                        <h4>1860</h4>
+                        <p>On 25 October 1860, Weltkrake appeared in the form a great lion right in front of Buckingham Palace, capable of intelligent conversation and turning opium into gold. It gave much fortune to merchants and the royal family itself</p>
+                        <p>After this appearance, the Weltkrake, in the form of the "Golden Lion" became officially respected by the royal family</p>
+                        <h4>1960</h4>
+                        <p>On 14 February 1960, the Golden Lion materialized once again at Buckingham Palace, but it now has the front half of a lion, and the back half of an octopus, with its eight tentacles. And the once great and respected creature was now lying weak and fatally injured for the pedestrians of England to see. It vanished after hours of agnonizing torment.</p>
+                        <p>This event is still disputed with one side claiming that there was no photographic evidence, and that it was an attempt to disrespect the Golden Lion. But the other side was skeptical and claimed the British government covered it up to protect the creature's reputation and divine appearence</p>
+                    </section>
+                </div>
+                <div class="toggleable-block">
+                    <h3 class="section-title ff-display">Thailand | Evil Avian (วิหกสามานย์)</h3>
+                    <section class="section-content">
+                        <h4>1893</h4>
+                        <p>On 13 July 1893, the Weltkrake appeared in the form of a giant gallic rooster terrorizing the residents of Bangkok, going on a rampage of trampling shops, and even going to the countryside to peck a wild white elephant to death.</p>
+                        <p>Amidst the chaos when it reached Petchabun, a local named Boonsohng tried to offer it his small amount of jewelries. The beast calmed down and carefully inspected the jewelries before saying its first intelligible word, "More". Soon, the aristocrats all over the country was forced to pay tribute a massive stash of gold before the rooster said "Enough". Afterwhich the rooster walked eastward, crossing the Mekong river, before mysteriously disappearing.</p>
+                        <h4>1954</h4>
+                        <p>In September 1954, a large bald eagle flew over Thailand, its wing spanned from Kanchanaburi to Chantaburi. The gloom of its silhouette would be there for a month before disappearing, messing up the climate and farmlands of the people.</p>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script>
+        const sections = document.querySelectorAll('.toggleable-block');
+
+        sections.forEach(section => {
+            const title = section.querySelector('.section-title');
+            const content = section.querySelector('.section-content');
+            
+            title.addEventListener('click', () => {
+                content.style.display = (content.style.display === 'none') ? 'block' : 'none';
+            });
+        });
+    </script>
 </body>
 </html>

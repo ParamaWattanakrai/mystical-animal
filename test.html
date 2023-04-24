@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .section {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            cursor: pointer;
+        }
+
+        .section-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <h2 class="section-title">Section Title</h2>
+        <div class="section-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+    <script>
+        const sections = document.querySelectorAll('.section');
+
+        sections.forEach(section => {
+            const title = section.querySelector('.section-title');
+            const content = section.querySelector('.section-content');
+            
+            title.addEventListener('click', () => {
+                content.style.display = (content.style.display === 'none') ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
