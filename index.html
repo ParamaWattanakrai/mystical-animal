@@ -22,7 +22,7 @@
             font-family: var(--ff-display);
         }
         .ff-body {
-            font-family: var(--ff-body)
+            font-family: var(--ff-body);
         }
 
         .text-center {
@@ -34,6 +34,7 @@
         body {
             background-color: var(--clr-dark);
             font-family: var(--ff-body);
+            font-size: 1.25em;
             color: var(--clr-light);
         }
 
@@ -44,8 +45,29 @@
             width: min(var(--max-width), 100% - var(--padding) * 2);
             margin-inline: auto;
         }
+
         .toggleable-block > .section-title:hover {
             cursor: pointer;
+        }
+
+        .section-content {
+            display: none;
+            animation: slide-down 0.5s ease-in;
+        }
+
+        @keyframes slide-down {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-content.show {
+            display: block;
+            animation: slide-up 0.5s ease-in;
+        }
+
+        @keyframes slide-up {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -59,14 +81,16 @@
         <section>
             <div class="container">
             <h2 class="ff-display">Lore</h2>
-            <p class="ff-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae ullam, culpa molestiae, assumenda voluptatem voluptatum quo vero explicabo odio nemo, esse sunt tenetur eaque exercitationem sed aspernatur a ducimus veniam.</p>
+            <p>The mystical creature, or rather, "creatures" had roamed the Earth on multiple occasions, once thought as separate animals with different motives. However with undenyable similar characteristics, some claim that the creatures were one great entity all along, with its tendency of infinite growth, it's been given the name "Weltkrake"</p>
+            <p>First seen in early mercantilist England, the mystical beast has grown in strength, power and scale. What one were just helpless tortoises now became an octopus large enough to grab the entire planet Earth.</p>
+            <p>Initially shunned as a divine creature of chaos, now has been worshipped by many who were blessed by it, and a symbol of fear for those who were gravely harmed. Let's leave ethical judgement to you who discovered its story...</p>
             </div>
         </section>
         <section>
             <div class="container">
                 <h2 class="ff-display">Appearance</h2>
-                <p>In modern days Weltkrake appears as an octopus of such colossal size that its tentacles wraps around the entire planet. Its massive body, dwarfs even the largest of whales, and its tentacles, not limited to eight, are each longer than any coastline on Earth, tighting gripping the entire Earth.</p>
-                <p>But it could only be seen by few people determined to search for it. Other than them, it's invisible to the naked eyes.</p>
+                <p>In modern days Weltkrake appears as an octopus of such colossal scale that its tentacles wraps around the entire planet. Its massive body, dwarfs even the largest of whales, and its tentacles, not limited to eight, are each longer than any coastline on Earth, tighting gripping the entire Earth. Ironic to its size, Weltkrake can be easily "overlooked", invisible to the naked eyes that belong to people who do not actively search for it.</p>
+                <p>But it has not always been this huge or powerful. In the past it had taken many forms</p>
             </div>
         </section>
         <section>
@@ -111,7 +135,7 @@
             const content = section.querySelector('.section-content');
             
             title.addEventListener('click', () => {
-                content.style.display = (content.style.display === 'none') ? 'block' : 'none';
+                content.classList.toggle('show');
             });
         });
     </script>
