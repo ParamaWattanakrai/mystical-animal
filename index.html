@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weltkrake</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter&family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter&family=Raleway:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
             --ff-body: 'Bitter', serif;
             --ff-display: 'Raleway', sans-serif;
             --clr-dark: hsl(40, 7%, 8%);
             --clr-light: hsl(32, 16%, 84%);
+            --clr-brown: hsl(17, 41%, 26%);
         }
         
         /* Utility Classes */
@@ -21,6 +22,7 @@
         .ff-display {
             font-family: var(--ff-display);
         }
+
         .ff-body {
             font-family: var(--ff-body);
         }
@@ -32,10 +34,23 @@
         /* General Styling */
 
         body {
+            margin: 0;
+            padding: 0;
             background-color: var(--clr-dark);
             font-family: var(--ff-body);
             font-size: 1.25em;
             color: var(--clr-light);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding-left: 0;
+            text-indent: 0;
         }
 
         .container {
@@ -46,32 +61,143 @@
             margin-inline: auto;
         }
 
+        .separator {
+            background-color: var(--clr-light);
+            width: 90%;
+            height: 2px;
+            margin-top: 40px;
+            margin-bottom: 100px;
+        }
+
+        /* Animation and Java Script Related */
+        
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            height: 100vh;
+        }
+
+        .nav-flex {
+            display: flex;
+            height: 100%;
+        }
+
+        .nav-list {
+            position: absolute;
+            height: inherit;
+            transform: translateX(-100%);
+
+            background: linear-gradient(
+                to right,
+                var(--clr-brown),
+                transparent
+            );
+            color: var(--clr-light);
+            padding: 1em;
+            animation: slide-left 0.5s ease-in;
+        }
+
+        .nav-list.show {
+            position: relative;
+            height: inherit;
+            transform: translateX(0);
+
+            background: linear-gradient(
+                to right,
+                var(--clr-brown),
+                transparent
+            );
+            color: var(--clr-light);
+            padding: 1em;
+            animation: slide-right 0.5s ease-in;
+        }
+
+        .main-nav-button {
+            position: relative;
+            display: inherit;
+
+            border: none;
+            margin: 0;
+            width: auto;
+            overflow: visible;
+            background: transparent;
+            line-height: normal;
+            
+            padding: 0.5em 0.5em 0.5em 1.5em;
+            font-family: inherit;
+            font-size: inherit;
+            color: var(--clr-brown);
+            animation: 0.5s ease-out;
+        }
+
+        .main-nav-button.show {
+            position: relative;
+            display: inherit;
+
+            border: none;
+            margin: 0;
+            width: auto;
+            overflow: visible;
+            background: transparent;
+            line-height: normal;
+            
+            padding: 0.5em 0.5em 0.5em 1.5em;
+            font-family: inherit;
+            font-size: inherit;
+            color: var(--clr-brown);
+            animation: slide-up 0.5s ease-out;
+        }
+
         .toggleable-block > .section-title:hover {
             cursor: pointer;
         }
 
         .section-content {
             display: none;
-            animation: slide-down 0.5s ease-in;
-        }
-
-        @keyframes slide-down {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+            animation: slide-up 0.5s ease-in;
         }
 
         .section-content.show {
             display: block;
-            animation: slide-up 0.5s ease-in;
+            animation: slide-down 0.5s ease-in;
         }
 
+        @keyframes slide-left {
+            from { opacity: 1; transform: translateX(0); }
+            to { opacity: 0; transform: translateX(-75%); }
+        }
+
+        @keyframes slide-right {
+            from { opacity: 0; transform: translateX(-75%); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
         @keyframes slide-up {
+            from { opacity: 1; transform: translateY(0px); }
+            to { opacity: 0; transform: translateY(-15px); }
+        }
+
+        @keyframes slide-down {
             from { opacity: 0; transform: translateY(-15px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
+    <nav class="main-nav">
+        <div class="nav-flex">
+            <ul class="nav-list">
+                <li><a href="#">Weltkrake</a></li>
+                <li><a href="#lore">Lore</a></li>
+                <li>Appearance</li>
+                <li>Sightings Internationally</li>
+                <li>Summary</li>
+            </ul>
+            <button class="main-nav-button">bookmark—</button>
+        </div>
+    </nav>
     <header>
         <div class="container">
             <h1 class="ff-display text-center">WELTKRAKE</h1>
@@ -80,22 +206,24 @@
     <main>
         <section>
             <div class="container">
-            <h2 class="ff-display">Lore</h2>
+            <h2 id="lore" class="ff-display">Lore</h2>
             <p>The mystical creature, or rather, "creatures" had roamed the Earth on multiple occasions, once thought as separate animals with different motives. However with undenyable similar characteristics, some claim that the creatures were one great entity all along, with its tendency of infinite growth, it's been given the name "Weltkrake"</p>
             <p>First seen in early mercantilist England, the mystical beast has grown in strength, power and scale. What one were just helpless tortoises now became an octopus large enough to grab the entire planet Earth.</p>
             <p>Initially shunned as a divine creature of chaos, now has been worshipped by many who were blessed by it, and a symbol of fear for those who were gravely harmed. Let's leave ethical judgement to you who discovered its story...</p>
+            <hr class="separator">
             </div>
         </section>
         <section>
             <div class="container">
-                <h2 class="ff-display">Appearance</h2>
+                <h2 id="lore" class="ff-display">Appearance</h2>
                 <p>In modern days Weltkrake appears as an octopus of such colossal scale that its tentacles wraps around the entire planet. Its massive body, dwarfs even the largest of whales, and its tentacles, not limited to eight, are each longer than any coastline on Earth, tighting gripping the entire Earth. Ironic to its size, Weltkrake can be easily "overlooked", invisible to the naked eyes that belong to people who do not actively search for it.</p>
                 <p>But it has not always been this huge or powerful. In the past it had taken many forms</p>
+                <hr class="separator">
             </div>
         </section>
         <section>
             <div class="container">
-                <h2 class="ff-display">Sightings Internationally</h2>
+                <h2 id="lore" class="ff-display">Sightings Internationally</h2>
                 <div class="toggleable-block">
                     <h3 class="section-title ff-display">United Kingdom | Golden Lion</h3>
                     <section class="section-content">
@@ -124,11 +252,35 @@
                         <p>In September 1954, a large bald eagle flew over Thailand, its wing spanned from Kanchanaburi to Chantaburi. The gloom of its silhouette would be there for a month before disappearing, messing up the climate and farmlands of the people.</p>
                     </section>
                 </div>
-            </section>
-        </div>
+                <hr class="separator">
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h2 id="retrospect" class="ff-display">Retrospect</h2>
+                <p>After all these observations, were you able to deduct some "coincidences"? Did you figure out its motives?</p>
+            </div>
+        </section>
     </main>
     <script>
+        body = document.body;
+
+        body.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start' // scroll to top of target element
+        })
+
+        const nav = document.querySelectorAll('.nav-flex');
         const sections = document.querySelectorAll('.toggleable-block');
+
+        nav.forEach(section => {
+            const navButton = section.querySelector('.main-nav-button');
+            const navList = section.querySelector('.nav-list');
+            
+            navButton.addEventListener('click', () => {
+                navList.classList.toggle('show');
+            });
+        });
 
         sections.forEach(section => {
             const title = section.querySelector('.section-title');
