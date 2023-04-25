@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #side-nav {
+            left: -300px;
+            position: fixed;
+            width: 300px;
+            height: 100vh;
+
+            transition: 1s;
+        }
+
+        #side-nav.active {
+            left: 0;
+        }
+
+        #side-nav ul li {
+            margin: 2em 0;
+        }
+
+        .nav-toggle-button {
+            position: absolute;
+            top: 30px;
+            left: 330px;
+        }
+
+        .nav-toggle-button span {
+            width: 45px;
+            height: 4px;
+            background-color: black;
+            display: block;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body>
+    <nav id="side-nav">
+        <div class="nav-toggle-button" onclick="navActivation()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul>
+            <li><a href="#">Weltkrake</a></li>
+            <li><a href="#lore">Lore</a></li>
+            <li><a href="#appearance">Appearance</a></li>
+            <li><a href="#sightings">Sightings Internationally</a></li>
+            <li><a href="#retrospect">Retrospect</a></li>
+        </ul>
+    </nav>
+    <script>
+        function navActivation() {
+            document.getElementById('side-nav').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
