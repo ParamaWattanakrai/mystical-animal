@@ -13,8 +13,11 @@
             --ff-body: 'Bitter', serif;
             --ff-display: 'Raleway', sans-serif;
             --clr-dark: hsl(40, 7%, 8%);
+            --clr-very-dark: hsl(40, 7%, 3%);
             --clr-light: hsl(32, 16%, 84%);
             --clr-brown: hsl(17, 41%, 26%);
+            --clr-light-brown: hsl(17, 28%, 56%);
+            --clr-lighter-brown: hsl(17, 22%, 71%);
         }
         
         /* Utility Classes */
@@ -31,7 +34,19 @@
             text-align: center;
         }
 
+        .text-right {
+            text-align: right;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
         /* General Styling */
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             margin: 0;
@@ -72,8 +87,44 @@
             margin-bottom: 100px;
         }
 
+        /* Specific Styling*/
+
+        .primary-heading {
+            font-family: var(--ff-display);
+            font-size: 5rem;
+            color: var(--clr-brown);
+        }
+
+        .section-heading {
+            text-decoration: underline;
+
+            font-family: var(--ff-display);
+            font-size: 3rem;
+            transition: 1s;
+
+            color: var(--clr-light-brown);
+        }
+
+        .section-heading:hover {
+            transform: translateX(10px);
+            color: var(--clr-brown);
+        }
+
+        .section-subheading {
+            color: var(--clr-lighter-brown);
+        }
+
+        .primary-footer {
+            background-color: var(--clr-very-dark);
+            margin-top: 500px;
+            max-width: 100%;
+
+            padding: 1em;
+        }
+
         /* Animation and Java Script Related */
         
+        /* Drawer Navigation Toggling */
         #side-nav {
             left: -360px;
             position: fixed;
@@ -107,33 +158,63 @@
             position: absolute;
             top: 30px;
             left: 390px;
+            transition: 1s;
         }
 
-        .nav-toggle-button span {
+        .nav-toggle-button:hover {
+            transform: rotate(90deg);
+        }
+
+        .nav-toggle-button span{
             width: 45px;
             height: 5px;
             background-color: var(--clr-brown);
             display: block;
-            margin-top: 5px;
+            margin-top: 10px;
         }
 
-        .toggleable-block > .section-title:hover {
+        /* Section Toggling */
+
+        .dropdown-icon {
+            display: block;
+            transition: 1s;
+        }
+
+        .dropdown-icon span {
+            display: inherit;
+            width: 10px;
+            height: 5px;
+            background-color: var(--clr-brown);
+        }
+
+        .dropdown-icon span:nth-of-type(1) {
+            transform: rotate(45deg);
+        }
+
+        .dropdown-icon span:nth-of-type(2) {
+            transform: rotate(-45deg);
+        }
+
+        .section-title {
+            transition: 1s;
+        }
+
+        .section-title:hover {
             cursor: pointer;
+            color: var(--clr-light-brown);
+        }
+
+        .section-title:hover + .dropdown-icon {
+            transform: translateX(10px);
         }
 
         .section-content {
             display: none;
-            animation: slide-up 0.5s ease-in;
         }
 
         .section-content.show {
             display: block;
             animation: slide-down 0.5s ease-in;
-        }
-
-        @keyframes slide-up {
-            from { opacity: 1; transform: translateY(0px); }
-            to { opacity: 0; transform: translateY(-15px); }
         }
 
         @keyframes slide-down {
@@ -157,24 +238,24 @@
             <li><a href="#retrospect">Retrospect</a></li>
         </ul>
     </nav>
-    <header>
+    <header class="primary-heading">
         <div class="container">
-            <h1 class="ff-display text-center">WELTKRAKE</h1>
+            <h1 class="text-center">WELTKRAKE</h1>
         </div>
     </header>
     <main>
         <section id="lore">
             <div class="container">
-            <h2 class="ff-display">Lore</h2>
+            <h2 class="section-heading">Lore</h2>
             <p>The mystical creature, or rather, "creatures" had roamed the Earth on multiple occasions, once thought as separate animals with different motives. However with undenyable similar characteristics, some claim that the creatures were one great entity all along, with its tendency of infinite growth, it's been given the name "Weltkrake"</p>
-            <p>First seen in early mercantilist England, the mystical beast has grown in strength, power and scale. What one were just helpless tortoises now became an octopus large enough to grab the entire planet Earth.</p>
+            <p>First seen in early mercantilist England, the mystical beast has grown in strength, power and scale. What once were just helpless tortoises now became an octopus large enough to grab the entire planet Earth.</p>
             <p>Initially shunned as a divine creature of chaos, now has been worshipped by many who were blessed by it, and a symbol of fear for those who were gravely harmed. Let's leave ethical judgement to you who discovered its story...</p>
             <hr class="separator">
             </div>
         </section>
         <section id="appearance">
             <div class="container">
-                <h2 class="ff-display">Appearance</h2>
+                <h2 class="section-heading">Appearance</h2>
                 <p>In modern days Weltkrake appears as an octopus of such colossal scale that its tentacles wraps around the entire planet. Its massive body, dwarfs even the largest of whales, and its tentacles, not limited to eight, are each longer than any coastline on Earth, tighting gripping the entire Earth. Ironic to its size, Weltkrake can be easily "overlooked", invisible to the naked eyes that belong to people who do not actively search for it.</p>
                 <p>But it has not always been this huge or powerful. In the past it had taken many forms</p>
                 <hr class="separator">
@@ -182,9 +263,10 @@
         </section>
         <section id="sightings">
             <div class="container">
-                <h2 class="ff-display">Sightings Internationally</h2>
+                <h2 class="section-heading">Sightings Internationally</h2>
                 <div class="toggleable-block">
-                    <h3 class="section-title ff-display">United Kingdom | Golden Lion</h3>
+                    <h3 class="section-subheading section-title ff-display">United Kingdom | Golden Lion</h3>
+                    <div class="dropdown-icon"><span></span><span></span></div>
                     <section class="section-content">
                         <h4>16th Century</h4>
                         <p>The first recorded sighting of Weltkrake was witnessed by thousands at Port of London, somewhen in the later part of 16th century. With hundreds of thousands of tortoises, one by one, crawled up the English shore. The merchants were terrified of its sudden appearance, but were later in ecstacy when they found Indian spice delicately stored in the tortoises shells after killing some of them. Within a few days the tortoise horde was all but dead, leaving behind wealth for the merchants overnight.</p>
@@ -202,7 +284,8 @@
                     </section>
                 </div>
                 <div class="toggleable-block">
-                    <h3 class="section-title ff-display">Thailand | Evil Avian (วิหกสามานย์)</h3>
+                    <h3 class="section-subheading section-title ff-display">Thailand | Evil Avian (วิหกสามานย์)</h3>
+                    <div class="dropdown-icon"><span></span><span></span></div>
                     <section class="section-content">
                         <h4>1893</h4>
                         <p>On 13 July 1893, the Weltkrake appeared in the form of a giant gallic rooster terrorizing the residents of Bangkok, going on a rampage of trampling shops, and even going to the countryside to peck a wild white elephant to death.</p>
@@ -216,11 +299,14 @@
         </section>
         <section id="retrospect">
             <div class="container">
-                <h2 class="ff-display">Retrospect</h2>
+                <h2 class="section-heading">Retrospect</h2>
                 <p>After all these observations, were you able to deduct some "coincidences"? Did you figure out its motives?</p>
             </div>
         </section>
     </main>
+    <footer class="primary-footer">
+        <p class="text-right">Made by Parama Wattanakrai</p>
+    </footer>
     <script>
         const sections = document.querySelectorAll('.toggleable-block');
 
@@ -231,9 +317,11 @@
         sections.forEach(section => {
             const title = section.querySelector('.section-title');
             const content = section.querySelector('.section-content');
+            const icon = section.querySelector('.dropdown-icon');
             
             title.addEventListener('click', () => {
                 content.classList.toggle('show');
+                icon.classList.toggle('show');
             });
         });
     </script>
