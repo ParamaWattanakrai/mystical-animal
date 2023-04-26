@@ -15,9 +15,9 @@
             --clr-dark: hsl(40, 7%, 8%);
             --clr-very-dark: hsl(40, 7%, 3%);
             --clr-light: hsl(32, 16%, 84%);
-            --clr-brown: hsl(17, 41%, 26%);
-            --clr-light-brown: hsl(17, 28%, 56%);
-            --clr-lighter-brown: hsl(17, 22%, 71%);
+            --clr-main: hsl(232, 31%, 24%);
+            --clr-light-main: hsl(264, 15%, 56%);
+            --clr-lighter-main: hsl(261, 41%, 87%);
         }
         
         /* Utility Classes */
@@ -46,18 +46,6 @@
 
         html {
             scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-
-            letter-spacing: 0.10rem;
-            word-spacing: 0.15rem;
-            background-color: var(--clr-dark);
-            font-family: var(--ff-body);
-            font-size: 1.25rem;
-            color: var(--clr-light);
         }
 
         ul {
@@ -94,38 +82,76 @@
         }
 
         .separator {
-            background-color: var(--clr-light);
+            border: none;
+            background-color: var(--clr-main);
             width: 90%;
-            height: 2px;
+            height: 5px;
             margin-top: 40px;
             margin-bottom: 150px;
         }
 
-        /* Specific Styling*/
+        /* Responsive Styling*/
+
+        .banner-container {
+            position: relative;
+            z-index: -1;
+            margin-bottom: -500px;
+        }
+
+        .banner-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom, rgba(255,255,255,0) 0%, var(--clr-dark) 100%);
+        }
+
+        @media (max-width: 950px) {
+            .banner-container {
+                margin-bottom: -250px;
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+
+            letter-spacing: 0.10rem;
+            word-spacing: 0.15rem;
+            background-color: var(--clr-dark);
+            font-family: var(--ff-body);
+            font-size: clamp(0.75rem, 2.25vw, 1.25rem);
+            color: var(--clr-light);
+        }
 
         .primary-heading {
             font-family: var(--ff-display);
-            font-size: 5rem;
-            color: var(--clr-brown);
+            font-size: clamp(1.5rem, 3.75vw, 5rem);
+            color: var(--clr-main);
         }
 
         .section-heading {
             font-family: var(--ff-display);
-            font-size: 3rem;
+            font-size: clamp(1rem, 3.75vw, 3rem);
             transition: 1s;
 
-            color: var(--clr-light-brown);
+            color: var(--clr-light-main);
         }
 
         .section-heading:hover {
             transform: translateX(10px);
-            color: var(--clr-brown);
+            color: var(--clr-main);
         }
 
         .section-subheading {
             font-family: var(--ff-display);
-            color: var(--clr-lighter-brown);
+            color: var(--clr-lighter-main);
         }
+
+        /* Specific Styling*/
 
         .primary-footer {
             background-color: var(--clr-very-dark);
@@ -139,7 +165,7 @@
             letter-spacing: 0.2rem;
             font-family: var(--ff-display);
             text-decoration: dotted ;
-            color: var(--clr-light-brown);
+            color: var(--clr-light-main);
         }
 
         /* Animation and Java Script Related */
@@ -153,7 +179,8 @@
             width: 360px;
             height: 100vh;
 
-            background: linear-gradient(to right, var(--clr-dark) , transparent);
+            background: linear-gradient(
+                to right, var(--clr-dark) , transparent);
             
             transition: 1s;
         }
@@ -168,7 +195,7 @@
 
         .bookmark > a {
             opacity: 0.75;
-            background-color: var(--clr-brown);
+            background-color: var(--clr-main);
             color: var(--clr-light);
 
             padding: 0.25em;
@@ -206,13 +233,12 @@
         .nav-toggle-button span{
             width: 45px;
             height: 5px;
-            background-color: var(--clr-brown);
+            background-color: var(--clr-main);
             display: block;
             margin-top: 10px;
         }
 
         /* Section Toggling */
-
         .toggle-block {
             margin-bottom: 2.5em;
         }
@@ -226,7 +252,7 @@
             display: inherit;
             width: 10px;
             height: 5px;
-            background-color: var(--clr-brown);
+            background-color: var(--clr-main);
         }
 
         .dropdown-icon span:nth-of-type(1) {
@@ -244,7 +270,7 @@
         .section-title:hover {
             cursor: pointer;
             transform: translateX(-10px);
-            color: var(--clr-light-brown);
+            color: var(--clr-light-main);
         }
 
         .section-title:hover + .dropdown-icon {
@@ -264,9 +290,51 @@
             from { opacity: 0; transform: translateY(-15px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Cursor Light */
+
+        #flashlight {
+            z-index: 2;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: radial-gradient(
+                circle at var(--x) var(--y),
+                transparent 10%,
+                rgba(0,0,0,0.75) 20%);
+            transition: 2s;
+        }
+
+        #flashlight.off {
+            opacity: 0;
+        }
+
+        .light-toggle {
+            z-index: 3;
+            position: fixed;
+            top: 0;
+            right: 0;
+
+            opacity: 0.5;
+            font-size: 3.5rem;
+            padding-right: 1rem;
+
+            transition: 0.5s;
+        }
+
+        .light-toggle:hover {
+            cursor: pointer;
+            transform: translateY(-5px);
+        }
+
     </style>
 </head>
 <body>
+    <div id="flashlight"></div>
+    <span class="light-toggle" onclick="lightSwitch()">&#9728;</span>
     <nav id="side-nav">
         <div class="nav-toggle-button" onclick="navActivation()">
             <span></span>
@@ -293,6 +361,10 @@
             <h1 class="text-center">WELTKRAKE</h1>
         </div>
     </header>
+    <div class="banner-container">
+        <img src="https://svgshare.com/i/sXR.svg" alt="Weltkraken">
+        <div class="banner-cover"></div>
+    </div>
     <main>
         <section id="lore">
             <div class="container">
@@ -438,6 +510,16 @@
     </footer>
     <script>
         const sections = document.querySelectorAll('.toggle-block');
+
+        var pos = document.documentElement;
+        pos.addEventListener('mousemove', e =>{
+            pos.style.setProperty('--x', e.clientX + 'px')
+            pos.style.setProperty('--y', e.clientY + 'px')
+        })
+
+        function  lightSwitch() {
+            document.getElementById('flashlight').classList.toggle('off');
+        }
 
         function navActivation() {
             document.getElementById('side-nav').classList.toggle('active');
