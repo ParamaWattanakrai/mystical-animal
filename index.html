@@ -13,7 +13,7 @@
             --ff-body: 'Bitter', serif;
             --ff-display: 'Raleway', sans-serif;
             --clr-dark: hsl(40, 7%, 8%);
-            --clr-very-dark: hsl(40, 7%, 3%);
+            --clr-very-dark: hsl(40, 7%, 5%);
             --clr-light: hsl(32, 16%, 84%);
             --clr-main: hsl(232, 31%, 24%);
             --clr-light-main: hsl(264, 15%, 56%);
@@ -291,7 +291,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Cursor Light */
+        /* Cursor Flashlight */
 
         #flashlight {
             z-index: 2;
@@ -303,8 +303,8 @@
             pointer-events: none;
             background: radial-gradient(
                 circle at var(--x) var(--y),
-                transparent 10%,
-                rgba(0,0,0,0.75) 20%);
+                transparent 15%,
+                rgba(0, 0, 0, 0.75) 25%);
             transition: 2s;
         }
 
@@ -321,6 +321,7 @@
             opacity: 0.25;
             font-size: 3.5rem;
             padding-right: 1rem;
+            color: var(--clr-light);
 
             transition: 0.5s;
         }
