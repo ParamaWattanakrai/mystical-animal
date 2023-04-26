@@ -73,7 +73,7 @@
 
         .container {
             --max-width: 1440px;
-            --padding: 1rem;
+            --padding: 1.5em;
 
             width: min(var(--max-width), 100% - var(--padding) * 2);
             margin-inline: auto;
@@ -111,6 +111,7 @@
         }
 
         .section-subheading {
+            font-family: var(--ff-display);
             color: var(--clr-lighter-brown);
         }
 
@@ -126,6 +127,7 @@
         
         /* Drawer Navigation Toggling */
         #side-nav {
+            z-index: 1;
             left: -360px;
             position: fixed;
             top: 0;
@@ -141,13 +143,29 @@
             left: 0;
         }
 
-        #side-nav ul li{
-            margin: 2em 1em;
+        .bookmark{
+            margin: 2em 0 0 1em;
         }
 
-        #side-nav ul li a{
+        .bookmark > a {
             opacity: 0.75;
             background-color: var(--clr-brown);
+            color: var(--clr-light);
+
+            padding: 0.25em;
+            border-radius: 0.25em;
+        }
+
+        .subbookmark {
+            opacity: 0.5;
+            list-style: square;
+            margin: 1em 0 0 3em;
+        }
+
+        .subbookmark > a {
+            text-decoration: none;
+
+            opacity: 0.5;
             color: var(--clr-light);
 
             padding: 0.25em;
@@ -201,6 +219,7 @@
 
         .section-title:hover {
             cursor: pointer;
+            transform: translateX(-10px);
             color: var(--clr-light-brown);
         }
 
@@ -231,11 +250,15 @@
             <span></span>
         </div>
         <ul class="ff-display">
-            <li><a href="#">Weltkrake</a></li>
-            <li><a href="#lore">Lore</a></li>
-            <li><a href="#appearance">Appearance</a></li>
-            <li><a href="#sightings">Sightings Internationally</a></li>
-            <li><a href="#retrospect">Retrospect</a></li>
+            <li class="bookmark"><a href="#">Weltkrake</a></li>
+            <li class="bookmark"><a href="#lore">Lore</a></li>
+            <li class="bookmark"><a href="#appearance">Appearance</a></li>
+            <li class="bookmark"><a href="#sightings">Sightings Internationally</a></li>
+                <ul>
+                    <li class="subbookmark"><a href="#uk">United Kingdom</a></li>
+                    <li class="subbookmark"><a href="#th">Thailand</a></li>
+                </ul>
+            <li class="bookmark"><a href="#retrospect">Retrospect</a></li>
         </ul>
     </nav>
     <header class="primary-heading">
@@ -264,8 +287,8 @@
         <section id="sightings">
             <div class="container">
                 <h2 class="section-heading">Sightings Internationally</h2>
-                <div class="toggleable-block">
-                    <h3 class="section-subheading section-title ff-display">United Kingdom | Golden Lion</h3>
+                <div id="uk" class="toggleable-block">
+                    <h3 class="section-subheading section-title">United Kingdom | Golden Lion</h3>
                     <div class="dropdown-icon"><span></span><span></span></div>
                     <section class="section-content">
                         <h4>16th Century</h4>
@@ -283,8 +306,8 @@
                         <p>This event is still disputed with one side claiming that there was no photographic evidence, and that it was an attempt to disrespect the Golden Lion. But the other side was skeptical and claimed the British government covered it up to protect the creature's reputation and divine appearence</p>
                     </section>
                 </div>
-                <div class="toggleable-block">
-                    <h3 class="section-subheading section-title ff-display">Thailand | Evil Avian (วิหกสามานย์)</h3>
+                <div id="th" class="toggleable-block">
+                    <h3 class="section-subheading section-title">Thailand | Evil Avian (วิหกสามานย์)</h3>
                     <div class="dropdown-icon"><span></span><span></span></div>
                     <section class="section-content">
                         <h4>1893</h4>
