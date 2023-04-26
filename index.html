@@ -226,6 +226,12 @@
             transition: 1s;
         }
 
+        @media (max-width: 530px) {
+            #side-nav, .nav-toggle-button {
+                display: none;
+            }
+        }
+
         .nav-toggle-button:hover {
             transform: rotate(90deg);
         }
@@ -233,7 +239,7 @@
         .nav-toggle-button span{
             width: 45px;
             height: 5px;
-            background-color: var(--clr-main);
+            background-color: var(--clr-light);
             display: block;
             margin-top: 10px;
         }
@@ -320,7 +326,7 @@
 
             opacity: 0.25;
             font-size: 3.5rem;
-            padding-right: 1rem;
+            margin: 1rem;
             color: var(--clr-light);
 
             transition: 0.5s;
