@@ -52,11 +52,11 @@
             margin: 0;
             padding: 0;
 
-            letter-spacing: 0.10em;
-            word-spacing: 0.15em;
+            letter-spacing: 0.10rem;
+            word-spacing: 0.15rem;
             background-color: var(--clr-dark);
             font-family: var(--ff-body);
-            font-size: 1.25em;
+            font-size: 1.25rem;
             color: var(--clr-light);
         }
 
@@ -69,6 +69,15 @@
         li {
             padding-left: 0;
             text-indent: 0;
+        }
+
+        p {
+            margin-block: 1.75em;
+            transition: 0.5s;
+        }
+
+        p:hover {
+            font-size: 1.05em;
         }
 
         .container {
@@ -84,7 +93,7 @@
             width: 90%;
             height: 2px;
             margin-top: 40px;
-            margin-bottom: 100px;
+            margin-bottom: 150px;
         }
 
         /* Specific Styling*/
@@ -96,8 +105,6 @@
         }
 
         .section-heading {
-            text-decoration: underline;
-
             font-family: var(--ff-display);
             font-size: 3rem;
             transition: 1s;
@@ -123,6 +130,13 @@
             padding: 1em;
         }
 
+        .text-emphasize {
+            letter-spacing: 0.2rem;
+            font-family: var(--ff-display);
+            text-decoration: dotted ;
+            color: var(--clr-light-brown);
+        }
+
         /* Animation and Java Script Related */
         
         /* Drawer Navigation Toggling */
@@ -143,7 +157,7 @@
             left: 0;
         }
 
-        .bookmark{
+        .bookmark {
             margin: 2em 0 0 1em;
         }
 
@@ -176,6 +190,7 @@
             position: absolute;
             top: 30px;
             left: 390px;
+
             transition: 1s;
         }
 
@@ -192,6 +207,10 @@
         }
 
         /* Section Toggling */
+
+        .toggle-block {
+            margin-bottom: 2.5em;
+        }
 
         .dropdown-icon {
             display: block;
@@ -256,7 +275,10 @@
             <li class="bookmark"><a href="#sightings">Sightings Internationally</a></li>
                 <ul>
                     <li class="subbookmark"><a href="#uk">United Kingdom</a></li>
+                    <li class="subbookmark"><a href="#cn">China</a></li>
+                    <li class="subbookmark"><a href="#de">Germany</a></li>
                     <li class="subbookmark"><a href="#th">Thailand</a></li>
+                    <li class="subbookmark"><a href="#ru">Russia</a></li>
                 </ul>
             <li class="bookmark"><a href="#retrospect">Retrospect</a></li>
         </ul>
@@ -269,61 +291,137 @@
     <main>
         <section id="lore">
             <div class="container">
-            <h2 class="section-heading">Lore</h2>
-            <p>The mystical creature, or rather, "creatures" had roamed the Earth on multiple occasions, once thought as separate animals with different motives. However with undenyable similar characteristics, some claim that the creatures were one great entity all along, with its tendency of infinite growth, it's been given the name "Weltkrake"</p>
-            <p>First seen in early mercantilist England, the mystical beast has grown in strength, power and scale. What once were just helpless tortoises now became an octopus large enough to grab the entire planet Earth.</p>
-            <p>Initially shunned as a divine creature of chaos, now has been worshipped by many who were blessed by it, and a symbol of fear for those who were gravely harmed. Let's leave ethical judgement to you who discovered its story...</p>
+            <h2 class="section-heading">LORE</h2>
+            <p>The mystical creature, or rather, "creatures" had roamed the Earth on multiple occasions, once thought as separate animals with different motives.
+                However with undenyable similar characteristics, some claim that the creatures were one great entity all along, with its tendency of infinite growth,
+                it's been given the name "Weltkrake"</p>
+            <p>First seen in early mercantilist England, the mystical beast has grown in strength, power and scale.
+                What once were just helpless tortoises now became an octopus large enough to grab the entire planet Earth.</p>
+            <p>Initially shunned as a divine creature of chaos, now has been worshipped by many who were blessed by it, and a symbol of fear for those who were gravely harmed.
+                Let's leave ethical judgement to you whom discovered its story...</p>
             <hr class="separator">
             </div>
         </section>
         <section id="appearance">
             <div class="container">
-                <h2 class="section-heading">Appearance</h2>
-                <p>In modern days Weltkrake appears as an octopus of such colossal scale that its tentacles wraps around the entire planet. Its massive body, dwarfs even the largest of whales, and its tentacles, not limited to eight, are each longer than any coastline on Earth, tighting gripping the entire Earth. Ironic to its size, Weltkrake can be easily "overlooked", invisible to the naked eyes that belong to people who do not actively search for it.</p>
+                <h2 class="section-heading">APPEARANCE</h2>
+                <p>In modern days Weltkrake appears as an octopus of such colossal scale that its tentacles wraps around the entire planet.
+                    Its massive body, dwarfs even the largest of whales, and its tentacles, not limited to eight, are each longer than any coastline on Earth,
+                    tightly gripping the entire Earth. Ironic to its size, Weltkrake can be easily "overlooked",
+                    invisible to the naked eyes which belong to people who do not actively search for it.</p>
                 <p>But it has not always been this huge or powerful. In the past it had taken many forms</p>
                 <hr class="separator">
             </div>
         </section>
         <section id="sightings">
             <div class="container">
-                <h2 class="section-heading">Sightings Internationally</h2>
-                <div id="uk" class="toggleable-block">
+                <h2 class="section-heading">SIGHTINGS INTERNATIONALLY</h2>
+                <div id="uk" class="toggle-block">
                     <h3 class="section-subheading section-title">United Kingdom | Golden Lion</h3>
                     <div class="dropdown-icon"><span></span><span></span></div>
                     <section class="section-content">
-                        <h4>16th Century</h4>
-                        <p>The first recorded sighting of Weltkrake was witnessed by thousands at Port of London, somewhen in the later part of 16th century. With hundreds of thousands of tortoises, one by one, crawled up the English shore. The merchants were terrified of its sudden appearance, but were later in ecstacy when they found Indian spice delicately stored in the tortoises shells after killing some of them. Within a few days the tortoise horde was all but dead, leaving behind wealth for the merchants overnight.</p>
-                        <p>This event caused people from all over Europe to come by Port of London way more often, in hopes of being present of another miracle, many worshipped tortoise for the fortunes they got. The number of believers grew to a significant size, scaring the Catholic church of the time, prompting them to ban tortoise worshipping, claiming its a trial by God to see human greed.</p>
-                        <q>Our lord gave us a chance to prove ourselves for salvation. Yet we killed all of the tortoises over a handful of fortune. Divine is inevitable!</q>
-                        <p>A preacher quote according to John Fawke, in his most descriptive record of the event</p>
+                        <p>The British Government still deny the connections between the Golden Lion and Weltkrake to this day.</p>
+                        <h4 class="text-emphasize">16th Century</h4>
+                        <p>The first recorded sighting of Weltkrake was witnessed by thousands at Port of London, somewhen in the later part of 16th century.
+                            With hundreds of thousands of <span class="text-emphasize">TORTOISES</span>, one by one, crawled up the English shore.
+                            The merchants were terrified of its sudden appearance,
+                            but were later in ecstacy when they found Indian spice delicately stored in the tortoises shells after killing some of them.
+                            Within a few days the tortoise horde was all but dead, leaving behind wealth for the merchants overnight.</p>
+                        <p>This event caused people from all over Europe to come by Port of London way more often, in hopes of being present of another miracle,
+                            many worshipped tortoise for the fortunes they got. The number of believers grew to a significant size, scaring the Catholic church of the time,
+                            prompting them to ban tortoise worshipping, claiming its a trial by God to see human greed.</p>
                         <p>Some claimed that the divine punishment upon England was the English civil war in the next century</p>
                         <p>Later the Protestants adopted an opposing stance of the Catholics by claiming the turtoises were divine gifts from God</p>
-                        <h4>1860</h4>
-                        <p>On 25 October 1860, Weltkrake appeared in the form a great lion right in front of Buckingham Palace, capable of intelligent conversation and turning opium into gold. It gave much fortune to merchants and the royal family itself</p>
+                        <h4 class="text-emphasize">1860</h4>
+                        <p>On 25 October 1860, Weltkrake appeared in the form a great <span class="text-emphasize">LION</span> right in front of Buckingham Palace,
+                            capable of intelligent conversation and turning opium into gold. It gave much fortune to merchants and the royal family itself</p>
                         <p>After this appearance, the Weltkrake, in the form of the "Golden Lion" became officially respected by the royal family</p>
-                        <h4>1960</h4>
-                        <p>On 14 February 1960, the Golden Lion materialized once again at Buckingham Palace, but it now has the front half of a lion, and the back half of an octopus, with its eight tentacles. And the once great and respected creature was now lying weak and fatally injured for the pedestrians of England to see. It vanished after hours of agnonizing torment.</p>
-                        <p>This event is still disputed with one side claiming that there was no photographic evidence, and that it was an attempt to disrespect the Golden Lion. But the other side was skeptical and claimed the British government covered it up to protect the creature's reputation and divine appearence</p>
+                        <h4 class="text-emphasize">1960</h4>
+                        <p>On 14 February 1960, the Golden Lion materialized once again at Buckingham Palace, but it now has the front half of a lion, and the back half of an octopus,
+                            with its eight tentacles. And the once great and respected creature was now lying weak and fatally injured for the pedestrians of England to see.
+                            It vanished after hours of agnonizing torment.</p>
+                        <p>This event is still disputed with one side claiming that there was no photographic evidence, and that it was an attempt to disrespect the Golden Lion.
+                            But the other side was skeptical and claimed the British government covered it up to protect the creature's reputation and divine appearence</p>
                     </section>
                 </div>
-                <div id="th" class="toggleable-block">
-                    <h3 class="section-subheading section-title">Thailand | Evil Avian (วิหกสามานย์)</h3>
+                <div id="cn" class="toggle-block">
+                    <h3 class="section-subheading section-title">China | Weltkrake (世界章鱼)</h3>
                     <div class="dropdown-icon"><span></span><span></span></div>
                     <section class="section-content">
-                        <h4>1893</h4>
-                        <p>On 13 July 1893, the Weltkrake appeared in the form of a giant gallic rooster terrorizing the residents of Bangkok, going on a rampage of trampling shops, and even going to the countryside to peck a wild white elephant to death.</p>
-                        <p>Amidst the chaos when it reached Petchabun, a local named Boonsohng tried to offer it his small amount of jewelries. The beast calmed down and carefully inspected the jewelries before saying its first intelligible word, "More". Soon, the aristocrats all over the country was forced to pay tribute a massive stash of gold before the rooster said "Enough". Afterwhich the rooster walked eastward, crossing the Mekong river, before mysteriously disappearing.</p>
-                        <h4>1954</h4>
-                        <p>In September 1954, a large bald eagle flew over Thailand, its wing spanned from Kanchanaburi to Chantaburi. The gloom of its silhouette would be there for a month before disappearing, messing up the climate and farmlands of the people.</p>
+                        <p>Records of Weltkrake in China had been made thoroughly as claimed by the Chinese government. But few actually see the light of the day.</p>
+                        <h4 class="text-emphasize">1839</h4>
+                        <p>The Weltkrake appeared in the form of an unidentifiable <span class="text-emphasize">FERAL</span> creature.</p>
+                        <h4 class="text-emphasize">1860</h4>
+                        <p>The Weltkrake appeared in the form of a <span class="text-emphasize">BEAR</span> with tentacles instead of its hind legs.</p>
+                        <h4 class="text-emphasize">1897</h4>
+                        <p>The Weltkrake appeared in the form of a <span class="text-emphasize">SILVER EAGLE</span></p>
+                        <h4 class="text-emphasize">1931</h4>
+                        <p>The Weltkrake appeared in the form of a <span class="text-emphasize">GREEN PHEASANT</span>.</p>
+                        <p>The rest of official records by the Chinese government are still classfied.</p>
                     </section>
                 </div>
+                <div id="de" class="toggle-block">
+                    <h3 class="section-subheading section-title">Germany | Weltkrake</h3>
+                    <div class="dropdown-icon"><span></span><span></span></div>
+                    <section class="section-content">
+                        <p>Although a consistent record of Weltkrake in Germany, apart from its march over the Eastern Bloc, isn't available.
+                            The discoveries and theories made by great German minds are still notable.</p>
+                        <h4 class="text-emphasize">1895</h4>
+                        <p>A German biologist named Röhm Felder proposed a theory that the mystical beasts in China, and the Golden Lion in the United Kingdom were connected.
+                            And he even suggested that it had something to do with the rooster in Siam</p>
+                    </section>
+                </div>
+                <div id="th" class="toggle-block">
+                    <h3 class="section-subheading section-title">Thailand | Evil Avian (วิหคสามานย์)</h3>
+                    <div class="dropdown-icon"><span></span><span></span></div>
+                    <section class="section-content">
+                        <p>In modern days, Weltkrake is worshipped by most and many still make offerings to its spirits</p>
+                        <h4 class="text-emphasize">1893</h4>
+                        <p>On 13 July 1893, the Weltkrake appeared in the form of a giant <span class="text-emphasize">GALLIC ROOSTER</span>,
+                            with thousands of tentacles extruding from its comb, it terrorized the residents of Bangkok,
+                            going on a rampage of trampling shops, and even going to the countryside to peck a wild white elephant to death.</p>
+                        <p>Amidst the chaos when it reached Petchabun, a local named Boonsohng tried to offer it his small amount of jewelries.
+                            The beast calmed down and carefully inspected the jewelries before saying its first intelligible word, "More".
+                            Soon, the aristocrats all over the country was forced to pay tribute a massive stash of gold before the rooster said "Enough".
+                            Afterwhich the rooster walked eastward, crossing the Mekong river, before mysteriously disappearing.</p>
+                        <h4 class="text-emphasize">1954</h4>
+                        <p>In September 1954, a large octopus with the head of <span class="text-emphasize">BALD EAGLE</span> and flew over Thailand,
+                            its wing spanned from Kanchanaburi to Chantaburi. The gloom of its silhouette would be there for a year before flying over to Vietnam,
+                            messing up the climate and crops of farmlands.</p>
+                    </section>
+                </div>
+                <div id="ru" class="toggle-block">
+                    <h3 class="section-subheading section-title">Russia & Eastern Bloc | Weltkrake (Мировой Осьминог)</h3>
+                    <div class="dropdown-icon"><span></span><span></span></div>
+                    <section class="section-content">
+                        <p>Altough there were abnormally numerous rumors of prior Weltkrake "activities" in Russia, there were no concrete records nor consistent stories of it.
+                            People claimed it looked like a bear</p>
+                        <h4 class="text-emphasize">1914</h4>
+                        <p>Weltkrake first appeared in Russia on 28 July 1914. In the form of giant <span class="text-emphasize">OCTOPUS</span> towering over the Winter Palace,
+                            this is the first time in recorded history that Weltkrake has been seen in the form of an octopus, but surely not the last.
+                            The Tsar recognized it as "Weltkrake" for the first time in history, but he merely ignored it afterward.
+                            The Weltkrake would be there for the short rest of the Russian Empire's life.</p>
+                        <h4 class="text-emphasize">1917</h4>
+                        <p>During the February Revolution, the octopus stared blankly at the protestors from the top of the Winter Palace, tightly gripping it.</p>
+                        <p>During the storm of the Winter Palace on 17 November 1917. The Weltkrake violently attacked the Bolsheviks, seemingly guarding the palace.
+                            The revolutionaries retaliated with deadly force of artillery shells, which resulted in the destruction of both the Weltkrake and the Winter Palace.
+                            The Red Army would declare victory over the Weltkrake, declaring it an enemy of the people which was defeated after confirming its lifeless body.
+                            This was the first time a full on attack on Weltkrake was committed. The body was preserved in a disclosed place in Leningrad.</p>
+                        <h4 class="text-emphasize">1953</h4>
+                            5 March 1953, the Weltkrake body disappeared. A few days later, the Weltkrake would appear on Kremlin,
+                            over three times larger than the previous form which was in Leningrad. It would walk a long march, from Moscow to Berlin,
+                            destroying Eastern Bloc's residents houses and any other infrastructures in its ways, but the Soviet Government did not even try to stop it.
+                            It disappeared after reaching the destination of the Iron Curtain.
+                    </section>
+                </div>
+                <p>TO BE EXPANDED...</p>
                 <hr class="separator">
             </div>
         </section>
         <section id="retrospect">
             <div class="container">
-                <h2 class="section-heading">Retrospect</h2>
-                <p>After all these observations, were you able to deduct some "coincidences"? Did you figure out its motives?</p>
+                <h2 class="section-heading">RETROSPECT</h2>
+                <p>After all these observations, in retrospect, <span class="text-emphasize">WHAT DO YOU SEE?</span></p>
             </div>
         </section>
     </main>
@@ -331,7 +429,7 @@
         <p class="text-right">Made by Parama Wattanakrai</p>
     </footer>
     <script>
-        const sections = document.querySelectorAll('.toggleable-block');
+        const sections = document.querySelectorAll('.toggle-block');
 
         function navActivation() {
             document.getElementById('side-nav').classList.toggle('active');
